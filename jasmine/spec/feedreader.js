@@ -23,7 +23,7 @@ $(function() {
          */
         it('are defined', function() {
             /* tests expect 'allFeeds' to be defined
-            and have a length of greater than */
+            and have a length of greater than 0 */
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
@@ -36,7 +36,7 @@ $(function() {
 
          it('URLs are defined and not empty', function() {
             /*for loop goes through all indices of 'allFeeds'
-            to check that each item is defedine and 
+            to check that each item is defined and 
             has a length of greater than 0*/
             for (var i = allFeeds.length - 1; i >= 0; i--) {
                 expect(allFeeds[i]).toBeDefined();
@@ -153,7 +153,7 @@ $(function() {
                     /*set the secondLink*/
                     secondLink = document.querySelector('.entry-link').innerHTML;
                 });
-                /*once both links have been set, announce that it has finished running*/
+                /*once both links have been set, announces that it has finished running*/
                 done();
             });
         });
