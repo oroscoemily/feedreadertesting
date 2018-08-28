@@ -39,8 +39,8 @@ $(function() {
             to check that each item is defined and 
             has a length of greater than 0*/
             for (var i = allFeeds.length - 1; i >= 0; i--) {
-                expect(allFeeds[i]).toBeDefined();
-                expect(allFeeds[i].length).not.toBe(0);
+                expect(allFeeds[i].url).toBeDefined();
+                expect(allFeeds[i].url.length).not.toBe(0);
             }
          });
 
@@ -126,7 +126,7 @@ $(function() {
          });
 
          it('There is at least a single .entry element within the .feed container', function(){
-            expect(('.feed.entry').length).not.toBe(0);
+            expect(('.feed .entry').length).not.toBe(0);
          });
     });
 
@@ -152,9 +152,9 @@ $(function() {
                 loadFeed(1, function(){
                     /*set the secondLink*/
                     secondLink = document.querySelector('.entry-link').innerHTML;
+                    /*once both links have been set, announces that it has finished running*/
+                    done();
                 });
-                /*once both links have been set, announces that it has finished running*/
-                done();
             });
         });
 
